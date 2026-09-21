@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>韩保江-资深新闻评论员与深度观察者</title>
+    <meta name="description" content="韩保江官方网站。关注社会热点、深度解读政策趋势、分析经济走向及文化现象。提供客观、理性的评论文章与深度观察报告。">
+    <meta name="keywords" content="韩保江,新闻评论,深度观察,经济分析,社会热点,政策解读">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #1a3c5e;
+            --secondary-color: #2c5f8a;
+            --accent-color: #d9534f;
+            --text-color: #333;
+            --text-light: #666;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            --border-radius: 8px;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans SC", sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-light);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--accent-color);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background-color: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: var(--text-light);
+            background: #eee;
+            padding: 2px 8px;
+            border-radius: 4px;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-color);
+        }
+
+        nav a.active, nav a:hover {
+            color: var(--accent-color);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .btn:hover {
+            background-color: #c9302c;
+            transform: translateY(-2px);
+        }
+
+        /* About Section */
+        .section {
+            padding: 60px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .about-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--secondary-color);
+        }
+
+        .about-content p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        .tags {
+            margin-top: 20px;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #eef4f8;
+            color: var(--secondary-color);
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            margin-right: 10px;
+        }
+
+        /* Articles Grid */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .article-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-meta {
+            font-size: 0.85rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+            color: var(--text-color);
+        }
+
+        .card-excerpt {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .read-more {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .read-more::after {
+            content: '→';
+            margin-left: 5px;
+            transition: margin-left 0.2s;
+        }
+
+        .read-more:hover::after {
+            margin-left: 10px;
+        }
+
+        /* Categories */
+        .categories-section {
+            background-color: var(--white);
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .category-item {
+            background: var(--bg-light);
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: var(--border-radius);
+            transition: background 0.3s;
+            border: 1px solid transparent;
+        }
+
+        .category-item:hover {
+            background: var(--white);
+            border-color: var(--secondary-color);
+            box-shadow: var(--shadow);
+        }
+
+        .cat-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .cat-title {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-info p {
+            opacity: 0.8;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .footer-links h4 {
+            margin-bottom: 20px;
+        }
+
+        .footer-links ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            opacity: 0.8;
+            font-size: 0.9rem;
+        }
+
+        .footer-links a:hover {
+            opacity: 1;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.85rem;
+            opacity: 0.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-inner {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .about-img {
+                height: 300px;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container header-inner">
+            <a href="#" class="logo">
+                韩保江
+                <span>观点与观察</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#about" class="active">关于作者</a></li>
+                    <li><a href="#articles">深度评论</a></li>
+                    <li><a href="#categories">研究领域</a></li>
+                    <li><a href="#contact">联系合作</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <h1>洞察时代脉搏，理性思考未来</h1>
+            <p>资深新闻评论员韩保江，致力于宏观经济分析、社会热点解读及公共政策研究。在这里，提供独立、客观、深度的观点。</p>
+            <a href="#articles" class="btn">阅读最新文章</a>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3>关于韩保江</h3>
+                    <p>韩保江是一位长期关注中国经济社会发展动态的资深评论员与观察家。拥有丰富的政策研究背景与媒体从业经验，长期致力于通过多维度视角解析复杂的社会现象与经济趋势。</p>
+                    <p>他的文章风格严谨而不失犀利，注重逻辑推演与数据支撑，力求在纷繁复杂的信息中为读者提供清晰的逻辑链条和有价值的决策参考。</p>
+                    <div class="tags">
+                        <span class="tag">宏观经济</span>
+                        <span class="tag">政策解读</span>
+                        <span class="tag">社会观察</span>
+                        <span class="tag">产业分析</span>
+                    </div>
+                </div>
+                <img src="https://picsum.photos/seed/hanbaojiang/600/400.jpg" alt="韩保江工作照" class="about-img">
+            </div>
+        </section>
+
+        <!-- Articles Section -->
+        <section id="articles" class="section">
+            <div class="section-title">
+                <h2>深度评论</h2>
+                <p>精选近期热点话题与深度观察报告</p>
+            </div>
+            <div class="articles-grid">
+                <!-- Article 1 -->
+                <article class="article-card">
+                    <img src="https://picsum.photos/seed/economy/400/250.jpg" alt="经济趋势图" class="card-img">
+                    <div class="card-body">
+                        <div class="card-meta">2023-10-24 · 经济分析</div>
+                        <h3 class="card-title">当前经济形势下的投资逻辑重构</h3>
+                        <p class="card-excerpt">面对复杂多变的国际环境，传统的投资策略正在面临挑战。本文深入分析结构性调整中蕴含的机遇，探讨如何在不确定中寻找确定性。</p>
+                        <a href="#" class="read-more">阅读全文</a>
+                    </div>
+                </article>
+                <!-- Article 2 -->
+                <article class="article-card">
+                    <img src="https://picsum.photos/seed/society/400/250.jpg" alt="社会现象" class="card-img">
+                    <div class="card-body">
+                        <div class="card-meta">2023-10-18 · 社会热点</div>
+                        <h3 class="card-title">数字时代的信息茧房与公共讨论</h3>
+                        <p class="card-excerpt">算法推荐机制在提升效率的同时，是否正在加剧社会的极化？我们需要重新审视信息传播的伦理边界，构建更健康的公共讨论空间。</p>
+                        <a href="#" class="read-more">阅读全文</a>
+                    </div>
+                </article>
+                <!-- Article 3 -->
+                <article class="article-card">
+                    <img src="https://picsum.photos/seed/tech/400/250.jpg" alt="科技创新" class="card-img">
+                    <div class="card-body">
+                        <div class="card-meta">2023-10-10 · 科技产业</div>
+                        <h3 class="card-title">新质生产力：产业升级的核心引擎</h3>
+                        <p class="card-excerpt">从传统制造业向高科技产业转型是必然趋势。如何理解“新质生产力”的内涵，并制定切实可行的产业扶持政策，是当前的关键课题。</p>
+                        <a href="#" class="read-more">阅读全文</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Categories Section -->
+        <section id="categories" class="section categories-section">
+            <div class="section-title">
+                <h2>研究领域</h2>
+                <p>覆盖多个维度的深度思考</p>
+            </div>
+            <div class="category-grid">
+                <div class="category-item">
+                    <span class="cat-icon">📈</span>
+                    <div class="cat-title">宏观经济</div>
+                </div>
+                <div class="category-item">
+                    <span class="cat-icon">⚖️</span>
+                    <div class="cat-title">政策解读</div>
+                </div>
+                <div class="category-item">
+                    <span class="cat-icon">🏭</span>
+                    <div class="cat-title">产业发展</div>
+                </div>
+                <div class="category-item">
+                    <span class="cat-icon">🌐</span>
+                    <div class="cat-title">国际关系</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact/Newsletter Section -->
+        <section id="contact" class="section" style="background-color: var(--white); border-radius: var(--border-radius); padding: 40px;">
+            <div class="section-title">
+                <h2>订阅观点更新</h2>
+                <p>不错过每一篇深度分析</p>
+            </div>
+            <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <p style="margin-bottom: 20px;">如果您对特定领域感兴趣，欢迎订阅我们的简报，获取最新的观点摘要与行业动态。</p>
+                <form onsubmit="event.preventDefault(); alert('感谢您的订阅，请查收邮件确认。');" style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
+                    <input type="email" placeholder="请输入您的邮箱地址" required style="padding: 12px; border: 1px solid #ddd; border-radius: 4px; flex: 1; min-width: 250px;">
+                    <button type="submit" class="btn" style="border: none;">立即订阅</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-info">
+                    <h4>韩保江</h4>
+                    <p>致力于提供有深度、有温度、有态度的观察与评论。</p>
+                    <p>联系方式：contact@hanbaojiang.com</p>
+                </div>
+                <div class="footer-links">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#about">关于作者</a></li>
+                        <li><a href="#articles">文章列表</a></li>
+                        <li><a href="#categories">研究领域</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>热门话题</h4>
+                    <ul>
+                        <li><a href="#">经济复苏</a></li>
+                        <li><a href="#">数字化转型</a></li>
+                        <li><a href="#">社会治理</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">新浪微博</a></li>
+                        <li><a href="#">知乎专栏</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 韩保江观点与观察. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
