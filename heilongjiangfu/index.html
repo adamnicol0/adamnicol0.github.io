@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黑龙江福彩中心 - 官方开奖公告、投注指南与公益宣传平台</title>
+    <meta name="description" content="黑龙江福彩中心官方网站，提供双色球、大乐透、七乐彩等彩票开奖公告、中奖号码查询及购彩指南。致力于传播福彩文化，弘扬公益精神，为彩民提供安全、公平、透明的购彩服务。">
+    <meta name="keywords" content="黑龙江福彩中心,黑龙江彩票开奖,双色球开奖,大乐透开奖,福彩公益">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-red: #d93025;
+            --primary-dark: #b91c1c;
+            --primary-gold: #f59e0b;
+            --text-main: #1f2937;
+            --text-secondary: #4b5563;
+            --bg-body: #f3f4f6;
+            --bg-white: #ffffff;
+            --border-color: #e5e7eb;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-red);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit);
+        }
+
+        /* Header */
+        header {
+            background-color: var(--bg-white);
+            border-bottom: 4px solid var(--primary-red);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            background-color: #1f2937;
+            color: #d1d5db;
+            font-size: 0.875rem;
+            padding: 0.5rem 0;
+        }
+
+        .header-top .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-main {
+            padding: 1rem 0;
+        }
+
+        .header-main .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo img {
+            height: 50px;
+            width: auto;
+        }
+
+        .logo-text h1 {
+            font-size: 1.5rem;
+            color: var(--primary-dark);
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .logo-text span {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-menu a {
+            font-weight: 600;
+            color: var(--text-main);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+
+        .nav-menu a.active, .nav-menu a:hover {
+            color: var(--primary-red);
+        }
+
+        .nav-menu a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-red);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-red) 0%, #991b1b 100%);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Lottery Grid */
+        .lottery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .lottery-card {
+            background: var(--bg-white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border: 1px solid var(--border-color);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .lottery-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        }
+
+        .lottery-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .lottery-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .lottery-status {
+            font-size: 0.75rem;
+            background-color: #e5e7eb;
+            color: var(--text-secondary);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .lottery-status.live {
+            background-color: #fef2f2;
+            color: var(--primary-red);
+            font-weight: 600;
+        }
+
+        .lottery-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--text-main);
+            letter-spacing: 2px;
+            margin-bottom: 0.5rem;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        .lottery-date {
+            color: var(--text-secondary);
+            font-size: 0.875rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-red);
+            color: white;
+            padding: 0.5rem 1.25rem;
+            border-radius: 4px;
+            font-weight: 500;
+            text-align: center;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-dark);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-red);
+            color: var(--primary-red);
+        }
+
+        /* Main Content Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 2rem;
+            margin-top: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (max-width: 768px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+            .nav-menu {
+                display: none; /* Simplified for mobile */
+            }
+            .logo-text h1 {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* News Section */
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            padding-left: 1rem;
+            border-left: 5px solid var(--primary-red);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .section-title a {
+            font-size: 0.875rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+        }
+
+        .news-list {
+            background: var(--bg-white);
+            border-radius: 8px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            overflow: hidden;
+        }
+
+        .news-item {
+            display: flex;
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-date {
+            background-color: #f3f4f6;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+            text-align: center;
+            margin-right: 1rem;
+            min-width: 60px;
+        }
+
+        .news-date .day {
+            display: block;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--primary-red);
+            line-height: 1;
+        }
+
+        .news-date .month {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+        }
+
+        .news-content h3 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .news-content p {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+        }
+
+        /* Sidebar */
+        .sidebar-widget {
+            background: var(--bg-white);
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+        }
+
+        .widget-title {
+            font-size: 1.125rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-red);
+            display: inline-block;
+        }
+
+        .guide-list li {
+            margin-bottom: 0.75rem;
+        }
+
+        .guide-list a {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-main);
+            font-size: 0.95rem;
+        }
+
+        .guide-list a:hover {
+            color: var(--primary-red);
+        }
+
+        .guide-list a::after {
+            content: '›';
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        /* Service Banner */
+        .service-banner {
+            background-color: var(--primary-gold);
+            color: #78350f;
+            padding: 2rem;
+            border-radius: 8px;
+            text-align: center;
+            margin: 2rem 0;
+        }
+
+        .service-banner h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1f2937;
+            color: #d1d5db;
+            padding: 3rem 0 1rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 1.125rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--primary-red);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid #374151;
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #9ca3af;
+        }
+
+        /* Utility */
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.5rem;
+            font-size: 0.75rem;
+            border-radius: 9999px;
+            font-weight: 600;
+        }
+        .badge-danger { background-color: #fee2e2; color: #991b1b; }
+        .badge-success { background-color: #d1fae5; color: #065f46; }
+
+    </style>
+</head>
+<body>
+
+    <!-- Top Bar -->
+    <div class="header-top">
+        <div class="container">
+            <span>黑龙江福彩官方服务平台</span>
+            <div>
+                <a href="#">登录</a>
+                <span style="margin: 0 0.5rem">|</span>
+                <a href="#">注册</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header>
+        <div class="header-main">
+            <div class="container">
+                <div class="logo">
+                    <!-- Using a generic placeholder for the logo icon -->
+                    <img src="https://picsum.photos/seed/hlfclogo/100/100" alt="Logo" style="border-radius: 50%;">
+                    <div class="logo-text">
+                        <h1>黑龙江福彩中心</h1>
+                        <span>Heilongjiang Charity Lottery</span>
+                    </div>
+                </div>
+                <nav class="nav-menu">
+                    <a href="#" class="active">首页</a>
+                    <a href="#">开奖公告</a>
+                    <a href="#">玩法介绍</a>
+                    <a href="#">公益金</a>
+                    <a href="#">福彩资讯</a>
+                    <a href="#">购彩指南</a>
+                    <a href="#">联系我们</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>扶老、助残、救孤、济困</h2>
+            <p>理性购彩，快乐生活。黑龙江福彩致力于为社会福利事业筹集公益金。</p>
+        </div>
+    </section>
+
+    <div class="container">
+        <!-- Lottery Grid -->
+        <section class="lottery-grid">
+            <!-- Double Color Ball -->
+            <article class="lottery-card">
+                <div class="lottery-header">
+                    <span class="lottery-title">双色球</span>
+                    <span class="lottery-status live">开奖中</span>
+                </div>
+                <div class="lottery-number">06 12 18 24 28 32 + 09</div>
+                <div class="lottery-date">2023年10月24日 第240期</div>
+                <a href="#" class="btn">查看详情</a>
+            </article>
+
+            <!-- Super Lotto -->
+            <article class="lottery-card">
+                <div class="lottery-header">
+                    <span class="lottery-title">大乐透</span>
+                    <span class="lottery-status live">开奖中</span>
+                </div>
+                <div class="lottery-number">05 09 14 26 33 + 02 08</div>
+                <div class="lottery-date">2023年10月24日 第23103期</div>
+                <a href="#" class="btn">查看详情</a>
+            </article>
+
+            <!-- Qi Le Cai -->
+            <article class="lottery-card">
+                <div class="lottery-header">
+                    <span class="lottery-title">七乐彩</span>
+                    <span class="lottery-status">待开奖</span>
+                </div>
+                <div class="lottery-number" style="color: #9ca3af; font-size: 1.5rem;">-- -- -- -- -- -- + --</div>
+                <div class="lottery-date">2023年10月25日</div>
+                <a href="#" class="btn btn-outline">设置提醒</a>
+            </article>
+
+            <!-- 3D -->
+            <article class="lottery-card">
+                <div class="lottery-header">
+                    <span class="lottery-title">3D</span>
+                    <span class="lottery-status">开奖中</span>
+                </div>
+                <div class="lottery-number">1 5 9</div>
+                <div class="lottery-date">2023年10月24日 第2023249期</div>
+                <a href="#" class="btn">查看详情</a>
+            </article>
+        </section>
+
+        <!-- Main Layout -->
+        <div class="main-layout">
+            <!-- Left Content -->
+            <main>
+                <div class="section-title">
+                    <span>最新开奖公告</span>
+                    <a href="#">更多公告 &gt;</a>
+                </div>
+                <div class="news-list">
+                    <article class="news-item">
+                        <div class="news-date">
+                            <span class="day">24</span>
+                            <span class="month">10月</span>
+                        </div>
+                        <div class="news-content">
+                            <h3><a href="#">黑龙江福彩中心关于2023年10月24日开奖公告的发布</a></h3>
+                            <p>经核实，2023年第240期双色球、第23103期大乐透及第2023249期3D开奖号码...</p>
+                        </div>
+                    </article>
+                    <article class="news-item">
+                        <div class="news-date">
+                            <span class="day">23</span>
+                            <span class="month">10月</span>
+                        </div>
+                        <div class="news-content">
+                            <h3><a href="#">关于严厉打击利用网络非法销售彩票行为的公告</a></h3>
+                            <p>为维护正常的彩票市场秩序，保护彩票发行者和购买者的合法权益...</p>
+                        </div>
+                    </article>
+                    <article class="news-item">
+                        <div class="news-date">
+                            <span class="day">22</span>
+                            <span class="month">10月</span>
+                        </div>
+                        <div class="news-content">
+                            <h3><a href="#">黑龙江福彩公益金使用情况公示（2023年第三季度）</a></h3>
+                            <p>本季度公益金共筹集5,000万元，主要用于养老服务、残疾人救助等...</p>
+                        </div>
+                    </article>
+                    <article class="news-item">
+                        <div class="news-date">
+                            <span class="day">21</span>
+                            <span class="month">10月</span>
+                        </div>
+                        <div class="news-content">
+                            <h3><a href="#">“福彩杯”黑龙江省第十八届社区运动会圆满落幕</a></h3>
+                            <p>本次活动由黑龙江福彩中心主办，旨在通过体育活动弘扬福彩精神...</p>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="section-title" style="margin-top: 2rem;">
+                    <span>福彩公益金</span>
+                    <a href="#">查看更多 &gt;</a>
+                </div>
+                <div class="news-list">
+                    <article class="news-item">
+                        <div class="news-content">
+                            <h3><a href="#">公益金助力养老服务：全省新建社区日间照料中心50家</a></h3>
+                            <p>资金支持用于改善老旧小区老年人居住环境，提升居家养老服务质量。</p>
+                        </div>
+                    </article>
+                    <article class="news-item">
+                        <div class="news-content">
+                            <h3><a href="#">救助孤残儿童：龙江福彩在行动</a></h3>
+                            <p>通过“福彩圆梦”项目，资助贫困家庭孤残儿童完成学业。</p>
+                        </div>
+                    </article>
+                </div>
+            </main>
+
+            <!-- Right Sidebar -->
+            <aside>
+                <!-- Quick Guide -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">购彩指南</h3>
+                    <ul class="guide-list">
+                        <li><a href="#">双色球玩法规则详解</a></li>
+                        <li><a href="#">大乐透玩法规则详解</a></li>
+                        <li><a href="#">如何识别正规福彩站</a></li>
+                        <li><a href="#">中大奖后如何兑奖</a></li>
+                        <li><a href="#">理性购彩，快乐生活</a></li>
+                    </ul>
+                </div>
+
+                <!-- Service Banner -->
+                <div class="service-banner">
+                    <h3>寻找身边的福彩投注站</h3>
+                    <p style="margin-bottom: 1rem;">使用地图服务查找距离您最近的合法投注站。</p>
+                    <button class="btn" style="background-color: #78350f; color: white;">查找投注站</button>
+                </div>
+
+                <!-- Hot News -->
+                <div class="sidebar-widget">
+                    <h3 class="widget-title">热门资讯</h3>
+                    <ul class="guide-list">
+                        <li><a href="#">2023年黑龙江省福彩销售情况通报</a></li>
+                        <li><a href="#">第240期双色球奖池金额公布</a></li>
+                        <li><a href="#">福彩刮刮乐新品推荐</a></li>
+                        <li><a href="#">各地福彩中心动态汇总</a></li>
+                    </ul>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">中心简介</a></li>
+                        <li><a href="#">组织架构</a></li>
+                        <li><a href="#">领导信息</a></li>
+                        <li><a href="#">联系方式</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>业务指南</h4>
+                    <ul>
+                        <li><a href="#">玩法介绍</a></li>
+                        <li><a href="#">投注技巧</a></li>
+                        <li><a href="#">开奖查询</a></li>
+                        <li><a href="#">兑奖说明</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>公益金</h4>
+                    <ul>
+                        <li><a href="#">使用范围</a></li>
+                        <li><a href="#">使用情况</a></li>
+                        <li><a href="#">审计报告</a></li>
+                        <li><a href="#">社会责任</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">官方微信公众号</a></li>
+                        <li><a href="#">官方微博</a></li>
+                        <li><a href="#">新闻客户端下载</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 黑龙江福彩中心 版权所有 | 黑龙江省福利彩票发行中心</p>
+                <p style="margin-top: 0.5rem; font-size: 0.75rem; color: #6b7280;">
+                    吉ICP备XXXXXXXX号-1 | 互联网彩票经营许可证：黑福彩字[2023]XXX号<br>
+                    郑重声明：彩票是公益事业的组成部分，请理性购彩，量力而行。
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
