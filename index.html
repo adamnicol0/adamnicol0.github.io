@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="金典名作奶粉排行榜 - 提供最新、最全的金典名作奶粉产品评测、营养成分分析及选购指南，帮助家长科学育儿，甄选优质奶粉。">
+    <meta name="keywords" content="金典名作奶粉排行榜,金典名作奶粉,奶粉推荐,婴幼儿奶粉评测,金典名作奶粉怎么样">
+    <title>金典名作奶粉排行榜 - 婴幼儿奶粉深度评测与选购指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c7be5;
+            --secondary-color: #e63757;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #2d3748;
+            --text-secondary: #718096;
+            --border-radius: 12px;
+            --spacing-unit: 1rem;
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 头部导航 */
+        header {
+            background: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-main);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #eef2f3 0%, #e0eafc 100%);
+            padding: 60px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        /* 评分卡片列表 */
+        .ranking-section {
+            margin-bottom: 60px;
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            color: var(--text-main);
+        }
+
+        .section-desc {
+            color: var(--text-secondary);
+        }
+
+        .ranking-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+        }
+
+        .rank-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.2s, box-shadow 0.2s;
+            border: 1px solid #edf2f7;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .rank-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0,0,0,0.05);
+        }
+
+        .rank-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 2px 5px rgba(44, 123, 229, 0.4);
+            z-index: 10;
+        }
+
+        .rank-badge.top-3 {
+            background: var(--secondary-color);
+        }
+
+        .card-image {
+            height: 200px;
+            background-color: #cbd5e0;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .product-name {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .product-tag {
+            display: inline-block;
+            font-size: 0.8rem;
+            padding: 2px 8px;
+            background: #ebf8ff;
+            color: var(--primary-color);
+            border-radius: 4px;
+            margin-bottom: 12px;
+            width: fit-content;
+        }
+
+        .score-row {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px dashed #e2e8f0;
+        }
+
+        .score-item {
+            text-align: center;
+        }
+
+        .score-val {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .score-label {
+            font-size: 0.8rem;
+            color: var(--text-secondary);
+        }
+
+        .card-footer {
+            margin-top: auto;
+        }
+
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            text-align: center;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #1a68d1;
+        }
+
+        .btn-outline {
+            border: 1px solid #cbd5e0;
+            color: var(--text-secondary);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+
+        /* 评测维度 */
+        .evaluation-section {
+            background: var(--card-bg);
+            padding: 40px;
+            border-radius: var(--border-radius);
+            margin-bottom: 60px;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .eval-item h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .eval-icon {
+            width: 24px;
+            height: 24px;
+            background: #edf2f7;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+        }
+
+        .eval-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* 选购指南 */
+        .guide-section {
+            margin-bottom: 60px;
+        }
+
+        .guide-steps {
+            counter-reset: step;
+        }
+
+        .step-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+
+        .step-number {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+
+        .step-content h3 {
+            font-size: 1.2rem;
+            margin-bottom: 8px;
+        }
+
+        .step-content p {
+            color: var(--text-secondary);
+        }
+
+        /* 页脚 */
+        footer {
+            background: #2d3748;
+            color: #a0aec0;
+            padding: 50px 0 20px;
+            margin-top: auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #4a5568;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式适配 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+            
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+
+            .ranking-list {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <a href="#" class="logo">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"></path></svg>
+                <span>金典名作奶粉评测</span>
+            </a>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">排行榜</a></li>
+                    <li><a href="#">营养成分</a></li>
+                    <li><a href="#">选购指南</a></li>
+                    <li><a href="#">常见问题</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container">
+                <h1>金典名作奶粉排行榜</h1>
+                <p>专业数据驱动，为您深度解析金典名作系列各款奶粉的营养价值、口感体验及适合人群，助您做出科学育儿选择。</p>
+            </div>
+        </section>
+
+        <section class="ranking-section container">
+            <div class="section-header">
+                <h2 class="section-title">热门产品推荐</h2>
+                <span class="section-desc">基于全网用户口碑与营养成分综合评分</span>
+            </div>
+
+            <div class="ranking-list">
+                <!-- 产品 1 -->
+                <article class="rank-card">
+                    <div class="rank-badge top-3">1</div>
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/milk1/400/300" alt="金典名作经典配方奶粉">
+                    </div>
+                    <div class="card-content">
+                        <span class="product-tag">综合推荐</span>
+                        <h3 class="product-name">金典名作经典配方 3段</h3>
+                        <div class="score-row">
+                            <div class="score-item">
+                                <div class="score-val">9.8</div>
+                                <div class="score-label">综合评分</div>
+                            </div>
+                            <div class="score-item">
+                                <div class="score-val">优</div>
+                                <div class="score-label">易消化</div>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 15px;">
+                            添加OPO结构脂与叶黄素，模拟母乳成分，呵护宝宝娇嫩肠胃，同时助力视力发育。适配方均衡，适合大多数宝宝。
+                        </p>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary">查看详情</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 产品 2 -->
+                <article class="rank-card">
+                    <div class="rank-badge top-3">2</div>
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/milk2/400/300" alt="金典名作有机全脂奶粉">
+                    </div>
+                    <div class="card-content">
+                        <span class="product-tag">有机优选</span>
+                        <h3 class="product-name">金典名作有机全脂奶粉</h3>
+                        <div class="score-row">
+                            <div class="score-item">
+                                <div class="score-val">9.5</div>
+                                <div class="score-label">综合评分</div>
+                            </div>
+                            <div class="score-item">
+                                <div class="score-val">极</div>
+                                <div class="score-label">纯净度</div>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 15px;">
+                            源自有机牧场，0添加香精、蔗糖。口感清淡自然，还原奶源本味，深受注重食品安全家庭喜爱。
+                        </p>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary">查看详情</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 产品 3 -->
+                <article class="rank-card">
+                    <div class="rank-badge top-3">3</div>
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/milk3/400/300" alt="金典名作高钙强化奶粉">
+                    </div>
+                    <div class="card-content">
+                        <span class="product-tag">成长助力</span>
+                        <h3 class="product-name">金典名作高钙强化奶粉</h3>
+                        <div class="score-row">
+                            <div class="score-item">
+                                <div class="score-val">9.2</div>
+                                <div class="score-label">综合评分</div>
+                            </div>
+                            <div class="score-item">
+                                <div class="score-val">高</div>
+                                <div class="score-label">钙含量</div>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 15px;">
+                            特别添加钙、维生素D及乳铁蛋白，专为学步期及学龄前儿童设计，支持骨骼发育与免疫力提升。
+                        </p>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary">查看详情</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 产品 4 -->
+                <article class="rank-card">
+                    <div class="rank-badge">4</div>
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/milk4/400/300" alt="金典名作益生菌奶粉">
+                    </div>
+                    <div class="card-content">
+                        <span class="product-tag">肠道健康</span>
+                        <h3 class="product-name">金典名作益生菌配方奶粉</h3>
+                        <div class="score-row">
+                            <div class="score-item">
+                                <div class="score-val">8.9</div>
+                                <div class="score-label">综合评分</div>
+                            </div>
+                            <div class="score-item">
+                                <div class="score-val">良</div>
+                                <div class="score-label">调节</div>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 15px;">
+                            添加双歧杆菌等益生菌组合，有助于维持肠道菌群平衡，改善宝宝消化吸收功能，缓解轻微便秘。
+                        </p>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary">查看详情</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 产品 5 -->
+                <article class="rank-card">
+                    <div class="rank-badge">5</div>
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/milk5/400/300" alt="金典名作水解蛋白奶粉">
+                    </div>
+                    <div class="card-content">
+                        <span class="product-tag">易吸收</span>
+                        <h3 class="product-name">金典名作部分水解蛋白奶粉</h3>
+                        <div class="score-row">
+                            <div class="score-item">
+                                <div class="score-val">8.5</div>
+                                <div class="score-label">综合评分</div>
+                            </div>
+                            <div class="score-item">
+                                <div class="score-val">易</div>
+                                <div class="score-label">吸收</div>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 15px;">
+                            采用科学水解工艺，降低大分子蛋白致敏性，适合对普通牛奶蛋白有轻微过敏风险的宝宝过渡期食用。
+                        </p>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary">查看详情</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- 产品 6 -->
+                <article class="rank-card">
+                    <div class="rank-badge">6</div>
+                    <div class="card-image">
+                        <img src="https://picsum.photos/seed/milk6/400/300" alt="金典名作适护配方奶粉">
+                    </div>
+                    <div class="card-content">
+                        <span class="product-tag">敏感体质</span>
+                        <h3 class="product-name">金典名作适护配方奶粉</h3>
+                        <div class="score-row">
+                            <div class="score-item">
+                                <div class="score-val">8.3</div>
+                                <div class="score-label">综合评分</div>
+                            </div>
+                            <div class="score-item">
+                                <div class="score-val">稳</div>
+                                <div class="score-label">营养</div>
+                            </div>
+                        </div>
+                        <p style="font-size: 0.9rem; color: var(--text-secondary); margin-bottom: 15px;">
+                            针对体质敏感人群优化配方，去除了部分可能引起不适的成分，保留核心营养素，提供温和呵护。
+                        </p>
+                        <div class="card-footer">
+                            <a href="#" class="btn btn-primary">查看详情</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- 评测维度解析 -->
+        <section class="evaluation-section container">
+            <div class="section-header">
+                <h2 class="section-title">选购核心指标</h2>
+            </div>
+            <div class="grid-3">
+                <div class="eval-item">
+                    <h3><span class="eval-icon">1</span> 营养成分配比</h3>
+                    <p>关注蛋白质、脂肪、碳水化合物的比例，以及是否添加了DHA、ARA、益生元等对宝宝大脑发育和肠道有益的营养素。</p>
+                </div>
+                <div class="eval-item">
+                    <h3><span class="eval-icon">2</span> 奶源与生产工艺</h3>
+                    <p>优质的奶源是基础，关注是否采用生牛乳一次成粉，以及喷雾干燥等低温工艺，保留更多活性营养。</p>
+                </div>
+                <div class="eval-item">
+                    <h3><span class="eval-icon">3</span> 口感与适口性</h3>
+                    <p>好的奶粉不应有腥味或异味。通过试喝判断宝宝接受度，避免因口感问题导致的拒食或消化不良。</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- 选购指南 -->
+        <section class="guide-section container">
+            <div class="section-header">
+                <h2 class="section-title">金典名作奶粉选购指南</h2>
+            </div>
+            <div class="guide-steps">
+                <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>确认宝宝月龄段</h3>
+                        <p>严格按照宝宝的月龄选择对应段位的奶粉（1段0-6个月，2段6-12个月，3段12-36个月）。切勿混用或降级使用。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>了解宝宝体质</h3>
+                        <p>对于易过敏体质或肠胃功能较弱的宝宝，建议优先选择深度水解或部分水解配方；普通体质可选择经典配方。</p>
+                    </div>
+                </div>
+                <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>参考口碑与评测</h3>
+                        <p>参考本站提供的金典名作奶粉排行榜及详细评测，结合医生建议，选择性价比高且口碑好的产品。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于本站</h4>
+                    <p style="font-size: 0.9rem; line-height: 1.6;">
+                        本站致力于为家长提供客观、专业的婴幼儿奶粉评测与选购信息。所有数据基于公开资料整理，仅供参考，不构成医疗建议。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速链接</h4>
+                    <ul>
+                        <li><a href="#">产品大全</a></li>
+                        <li><a href="#">营养知识</a></li>
+                        <li><a href="#">品牌对比</a></li>
+                        <li><a href="#">育儿论坛</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>客服邮箱: support@jinxiang.com</li>
+                        <li>商务合作: business@jinxiang.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 金典名作奶粉排行榜 版权所有.
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
